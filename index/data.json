@@ -1,0 +1,75 @@
+[
+    {
+        "capsule_id": "C101",
+        "missions": 5,
+        "details": "Details for Capsule ID 101",
+        "status":"Active"
+    },
+    {
+        "capsule_id": "C102",
+        "missions": 10,
+        "details": "Details for Capsule ID 102",
+        "status":"Retired"
+    },
+    {
+        "capsule_id": "C103",
+        "missions": 2,
+        "details": "Details for Capsule ID 103",
+        "status":"Unknown"
+    },
+    {
+        "capsule_id": "C104",
+        "missions": 23,
+        "details": "Details for Capsule ID 104",
+        "status":"Destroyed"
+    },
+    {
+        "capsule_id": "C105",
+        "missions": 5,
+        "details": "Details for Capsule ID 105",
+        "status":"Active"
+    },
+    {
+        "capsule_id": "C106",
+        "missions": 12,
+        "details": "Details for Capsule ID 106",
+        "status":"Retired"
+    },
+    {
+        "capsule_id": "C107",
+        "missions": 22,
+        "details": "Details for Capsule ID 107",
+        "status":"Unknown"
+    },
+    {
+        "capsule_id": "C108",
+        "missions": 20,
+        "details": "Details for Capsule ID 108",
+        "status":"Destroyed"
+    },
+    {
+        "capsule_id": "C109",
+        "missions": 15,
+        "details": "Details for Capsule ID 109",
+        "status":"Active"
+    },
+    {
+        "capsule_id": "C110",
+        "missions": 10,
+        "details": "Details for Capsule ID 110",
+        "status":"Retired"
+    },
+    {
+        "capsule_id": "C111",
+        "missions": 12,
+        "details": "Details for Capsule ID 111",
+        "status":"Unknown"
+    },
+    {
+        "capsule_id": "C112",
+        "missions": 40,
+        "details": "Details for Capsule ID 112",
+        "status":"Destroyed"
+    }
+
+]

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNQ Fetch Data</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="filterForm">
+            <div class="centerAlign">
+                <select id="status" name="status" class="select_style">
+                    <option value="">Select Status</option>
+                    <option value="Active">Active</option>
+                    <option value="Retired">Retired</option>
+                    <option value="Unknown">Unknown</option>
+                    <option value="Destroyed">Destroyed</option>
+                </select>
+                <button type="button" class="button_align" onclick="filterCapsules()">Load</button>
+            </div>
+
+        </form>
+
+        <table id="capsuleTable">
+            <thead id="active_status">
+            </thead>
+            <tbody id="capsuleData">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                window.capsuleData = data;
+            })
+            .catch(error => {
+                console.error('Error loading JSON:', error);
+                window.alert("Invalid JSON")
+            });
+
+        function filterCapsules() {
+            var selectedStatus = document.getElementById("status").value;
+            var filteredData = filterDataByStatus(selectedStatus);
+            displayFilteredData(filteredData);
+        }
+
+        function filterDataByStatus(status) {
+            return window.capsuleData.filter(function (capsule) {
+                return capsule.status === status;
+            });
+        }
+
+        function displayFilteredData(data) {
+            var tableBody = document.getElementById("capsuleData");
+            var tableStatus = document.getElementById("active_status");
+            tableBody.innerHTML = "";
+            tableStatus.innerHTML = "";
+            data.forEach(function (capsule, index) {
+                var row = document.createElement("tr");
+                var idCell = document.createElement("td");
+                idCell.textContent = capsule.capsule_id;
+                var missionsCell = document.createElement("td");
+                missionsCell.textContent = capsule.missions;
+                var detailsCell = document.createElement("td");
+                detailsCell.textContent = capsule.details;
+                if (index == 1) {
+                    var row1 = document.createElement("tr");
+                    var row2 = document.createElement("tr");
+                    var idCell1 = document.createElement("th");
+                    var id = document.createElement("th");
+                    var missions = document.createElement("th");
+                    var details = document.createElement("th");
+                    id.textContent = "Capsule ID";
+                    missions.textContent = "No of Missions";
+                    details.textContent = "Details";
+                    idCell1.textContent = `Showing for "${capsule.status}"`;
+                    idCell1.colSpan = 3;
+                    row1.appendChild(idCell1);
+                    tableStatus.appendChild(row1);
+                    row2.appendChild(id);
+                    row2.appendChild(missions);
+                    row2.appendChild(details);
+                    tableStatus.appendChild(row2);
+                }
+                row.appendChild(idCell);
+                row.appendChild(missionsCell);
+                row.appendChild(detailsCell);
+                tableBody.appendChild(row);
+            });
+        }
+    </script>
+</body>
+
+</html>

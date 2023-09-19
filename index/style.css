@@ -1,0 +1,35 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+ 
+ thead tr:nth-child(1) {background-color: #1ba1e2;}
+ thead tr:nth-child(2) {background-color: #dae8fc;}
+
+  .centerAlign{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+  }
+  .container{
+  margin: 10em;
+  }
+  .button_align{
+    width: 170px;
+    background: blue;
+    color: white;
+    border: none;
+    margin-left: 4em;
+    height: 30px;
+    cursor: pointer;
+  }
+  .select_style{
+    width: 200px;
+  }
